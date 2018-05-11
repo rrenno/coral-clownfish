@@ -7,8 +7,9 @@ export default class CellSuggestion {
        @param {Integer} columns Cell column.
        @return {void}
     */
-    constructor(row, column) {
+    constructor(row, column, type = null) {
         this.row = row
         this.column = column;
+        this.type = type;
     }
 }

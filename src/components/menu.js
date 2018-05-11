@@ -41,7 +41,11 @@ class Menu extends Component {
                 break;
             }
 
-            this.props.store.dispatch(clickCell(suggester.nextSuggestion(game)));
+            let suggestion = suggester.nextSuggestion(game);
+            if (suggestion.type === 'clownfish') {
+                this.props.store.dispatch(clickCell(suggestion));
+            }
+            this.props.store.dispatch(clickCell(suggestion));
 
             if (delay && numSuggestions > 1) {
                 this.setState({
